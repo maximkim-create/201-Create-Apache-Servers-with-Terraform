@@ -32,7 +32,7 @@ data "aws_ami" "amazon-linux-2" {
 resource "aws_instance" "apache-server" {
   ami             = data.aws_ami.amazon-linux-2.id
   instance_type   = "t2.micro"
-//  key_name        = "northvirginia"
+  key_name        = "Second"
   count           = 2
   security_groups = ["tf-project"]
   user_data = file("create_apache.sh")
